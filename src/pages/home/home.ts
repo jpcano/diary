@@ -8,23 +8,22 @@ import {Headers, RequestOptions, Http} from "@angular/http";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/do";
 
+import {TalkService} from "../../providers/talk-service";
+
 @Component({
     selector: 'page-home',
+    providers: [TalkService],
     templateUrl: 'home.html'
 })
 export class HomePage {
 
     talks: Array<Talk>;
 
-    constructor(public navCtrl: NavController, public http: Http) {
-	let headers = new Headers({'Content-Type': 'application/json'});
-	let options = new RequestOptions({headers: headers});
-	this.http.get('http://data.agenda.wedeploy.io/talks', options)
-	    .do(x => console.log(x))
-	    .map(res => res.json())
-	    .subscribe(x => this.talks = x)
+    constructor(public navCtrl: NavController, public talkService: TalkService) {
+	this.talkService.getTalks().subscribe(x => { this.talks = x });
+	// this.talkService.post();
     }
-
+    
     style(talk) {
 	return {
 	    'border-color': talk.category == 'workshop' ? 'purple' : 'red',
