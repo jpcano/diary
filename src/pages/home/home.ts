@@ -34,4 +34,8 @@ export class HomePage {
 	    'margin-bottom': '10px'
 	}
     }
+
+    pressMe() {
+	console.log('clicked!');
+    }
 }
