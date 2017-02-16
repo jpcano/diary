@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
+import {Talk} from "./Talk";
+
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
@@ -9,18 +11,9 @@ import { NavController } from 'ionic-angular';
 export class HomePage {
 
     talks = [
-	{
-	    name: 'ionic2',
-	    speaker: 'jpcano',
-	    category: 'workshop',
-	},
-	{
-	    name: 'ionic2',
-	    speaker: 'jpcano',
-	    category: 'talk',
-	},
-	
-    ]
+	new Talk('ionic2', 'jpcano', 'workshop'),
+	new Talk('angular2', 'jpcano', 'talk')
+    ];
 
     constructor(public navCtrl: NavController) {
 
