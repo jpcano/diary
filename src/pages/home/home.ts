@@ -4,7 +4,6 @@ import { NavController } from 'ionic-angular';
 
 import {Talk} from "./Talk";
 
-import {Headers, RequestOptions, Http} from "@angular/http";
 import "rxjs/add/operator/map";
 import "rxjs/add/operator/do";
 

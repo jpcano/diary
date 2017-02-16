@@ -5,16 +5,18 @@
 </ion-header>
 
 <ion-content padding>
-  <div [ngStyle]="style(talk)" *ngFor="let talk of talks; let i = index">
-    <h3>{{talk.name}}</h3>
-    {{talk.speaker}}
-    {{i}}
-    <div style="border: 1px solid red" *ngIf="i != talks.length - 1"></div>
-  </div>
+  <!-- <div [ngStyle]="style(talk)" *ngFor="let talk of talks; let i = index"> -->
+  <!--   <h3>{{talk.name}}</h3> -->
+  <!--   {{talk.speaker}} -->
+  <!--   {{i}} -->
+  <!--   <div style="border: 1px solid red" *ngIf="i != talks.length - 1"></div> -->
+  <!-- </div> -->
 
-  <button (click)="pressMe()">Press me</button>
+  <!-- <button (click)="pressMe()">Press me</button> -->
 
-  <input #address (keyup)="getAddress(address.value)">
-  <p>{{address.value}}</p>
+  <!-- <input #address (keyup)="getAddress(address.value)"> -->
+  <!-- <p>{{address.value}}</p> -->
 
+  <talk-row-component *ngFor="let talk of talks" [talk]="talk"></talk-row-component>
+  
 </ion-content>
