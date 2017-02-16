@@ -23,15 +23,6 @@ export class HomePage {
 	// this.talkService.post();
     }
     
-    style(talk) {
-	return {
-	    'border-color': talk.category == 'workshop' ? 'purple' : 'red',
-	    'border-left': '2px solid #00274F',
-	    'padding-left': '10px',
-	    'margin-bottom': '10px'
-	}
-    }
-
     pressMe() {
 	console.log('clicked!');
     }
