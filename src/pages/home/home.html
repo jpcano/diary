@@ -9,6 +9,7 @@
     <h3>{{talk.name}}</h3>
     {{talk.speaker}}
     {{i}}
+    <div style="border: 1px solid red" *ngIf="i != talks.length - 1"></div>
   </div>
 
   <button (click)="pressMe()">Press me</button>
