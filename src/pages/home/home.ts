@@ -38,4 +38,8 @@ export class HomePage {
     pressMe() {
 	console.log('clicked!');
     }
+
+    getAddress(address) {
+	console.log(address);
+    }
 }

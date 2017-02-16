@@ -12,4 +12,7 @@
 
   <button (click)="pressMe()">Press me</button>
 
+  <input #address (keyup)="getAddress(address.value)">
+  <p>{{address.value}}</p>
+
 </ion-content>
