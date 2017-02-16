@@ -8,12 +8,19 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-    talk = {
-	name: 'ionic2',
-	speaker: 'jpcano',
-	category: 'workshop',
-	icon: 'http://foro.universomarvel.com/Themes/carbonate202b/images/heart.png'
-    };
+    talks = [
+	{
+	    name: 'ionic2',
+	    speaker: 'jpcano',
+	    category: 'workshop',
+	},
+	{
+	    name: 'ionic2',
+	    speaker: 'jpcano',
+	    category: 'talk',
+	},
+	
+    ]
 
     constructor(public navCtrl: NavController) {
 
@@ -23,7 +30,8 @@ export class HomePage {
 	return {
 	    'border-color': talk.category == 'workshop' ? 'purple' : 'red',
 	    'border-left': '2px solid #00274F',
-	    'padding-left': '10px'
+	    'padding-left': '10px',
+	    'margin-bottom': '10px'
 	}
     }
 }
