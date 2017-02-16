@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {Talk} from "../../pages/home/Talk" 
 
 /*
@@ -10,7 +10,7 @@ import {Talk} from "../../pages/home/Talk"
 @Component({
     selector: 'talk-row-component',
     template: `
-    <div [ngStyle]="style()">
+    <div [ngStyle]="style()" (clic)="click()">
       <h3>{{talk.name}}</h3>{{talk.speaker}} {{i}}
     </div>`
 })
@@ -19,6 +19,9 @@ export class TalkRowComponent {
     @Input()
     talk: Talk;
 
+    @Output()
+    onClick: EventEmitter<Talk> = new EventEmitter<Talk>();
+    
     text: string;
     
     constructor() {
@@ -34,4 +37,9 @@ export class TalkRowComponent {
 	    'margin-bottom': '20px'
 	}
     }
+
+    click() {
+	this.onClick.emit(this.talk);
+    }
+    
 }

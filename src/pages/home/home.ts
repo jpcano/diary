@@ -30,4 +30,8 @@ export class HomePage {
     getAddress(address) {
 	console.log(address);
     }
+
+    onClick($event) {
+	console.log($event);
+    }
 }
