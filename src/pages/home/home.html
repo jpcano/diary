@@ -5,5 +5,8 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>{{talk.name}}</h3>{{talk.speaker}}
+  <div [ngStyle]="style(talk)">
+    <h3>{{talk.name}}</h3>
+    {{talk.speaker}}
+  </div>
 </ion-content>
