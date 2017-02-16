@@ -4,19 +4,25 @@ import { NavController } from 'ionic-angular';
 
 import {Talk} from "./Talk";
 
+import {Headers, RequestOptions, Http} from "@angular/http";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/do";
+
 @Component({
     selector: 'page-home',
     templateUrl: 'home.html'
 })
 export class HomePage {
 
-    talks = [
-	new Talk('ionic2', 'jpcano', 'workshop'),
-	new Talk('angular2', 'jpcano', 'talk')
-    ];
+    talks: Array<Talk>;
 
-    constructor(public navCtrl: NavController) {
-
+    constructor(public navCtrl: NavController, public http: Http) {
+	let headers = new Headers({'Content-Type': 'application/json'});
+	let options = new RequestOptions({headers: headers});
+	this.http.get('http://data.agenda.wedeploy.io/talks', options)
+	    .do(x => console.log(x))
+	    .map(res => res.json())
+	    .subscribe(x => this.talks = x)
     }
 
     style(talk) {
