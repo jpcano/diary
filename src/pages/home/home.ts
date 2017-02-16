@@ -7,10 +7,14 @@ import { NavController } from 'ionic-angular';
     templateUrl: 'home.html'
 })
 export class HomePage {
-    talk = "Wait 5 seconds for the interpolation to come."
+
+    talk = {
+	name: 'ionic2',
+	speaker: 'jpcano'
+    };
 
     constructor(public navCtrl: NavController) {
-	setTimeout(x => this.talk = 'hola!', 5000);
+
     }
 
 }
