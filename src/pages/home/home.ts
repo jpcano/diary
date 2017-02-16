@@ -11,7 +11,8 @@ export class HomePage {
     talk = {
 	name: 'ionic2',
 	speaker: 'jpcano',
-	category: 'workshop'
+	category: 'workshop',
+	icon: 'http://foro.universomarvel.com/Themes/carbonate202b/images/heart.png'
     };
 
     constructor(public navCtrl: NavController) {
