@@ -1,10 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>Home</ion-title>
+    <button (click)="showAddTalkPanel()">Add talk</button>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+  <div *ngIf="showAddTalk">
+    <add-talk></add-talk>
+  </div>
 
   <talk-row-component *ngFor="let talk of talks" [talk]="talk" (onClick)="onClick($event)"></talk-row-component>
   

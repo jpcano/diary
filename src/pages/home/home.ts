@@ -17,6 +17,7 @@ import {TalkService} from "../../providers/talk-service";
 export class HomePage {
 
     talks: Array<Talk>;
+    showAddTalk: boolean = false;
 
     constructor(public navCtrl: NavController, public talkService: TalkService) {
 	this.talkService.getTalks().subscribe(x => { this.talks = x });
@@ -34,4 +35,9 @@ export class HomePage {
     onClick($event) {
 	console.log($event);
     }
+
+    showAddTalkPanel() {
+	this.showAddTalk = !this.showAddTalk
+    }
+
 }
