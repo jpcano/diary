@@ -16,11 +16,11 @@ import {TalkService} from "../../providers/talk-service";
 })
 export class HomePage {
 
-    talks: Array<Talk>;
+    talks: any;
     showAddTalk: boolean = false;
 
     constructor(public navCtrl: NavController, public talkService: TalkService) {
-	this.talkService.getTalks().subscribe(x => { this.talks = x });
+	this.talks = this.talkService.getTalks();
 	// this.talkService.post();
     }
     

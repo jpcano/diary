@@ -11,6 +11,6 @@
     <add-talk></add-talk>
   </div>
 
-  <talk-row-component *ngFor="let talk of talks" [talk]="talk" (onClick)="onClick($event)"></talk-row-component>
+  <talk-row-component *ngFor="let talk of talks | async" [talk]="talk" (onClick)="onClick($event)"></talk-row-component>
   
 </ion-content>
