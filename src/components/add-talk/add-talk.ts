@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {TalkService} from "../../providers/talk-service";
 import {Talk} from "../../pages/home/Talk" 
+import { FormControl } from '@angular/forms'
 
 /*
   Generated class for the AddTalk component.
@@ -16,6 +17,8 @@ import {Talk} from "../../pages/home/Talk"
 
 export class AddTalkComponent {
 
+    name : FormControl;
+    
     constructor(public talkService: TalkService) {
     }
 
@@ -25,7 +28,9 @@ export class AddTalkComponent {
     // }
 
     addTalk(form) {
-	console.log(form);
+	this.name = form.controls.name;
+	this.name.hasError('required');
+	console.log(form, this.name);
 	// let talk = new Talk(name, speaker, "workshop");
 	// this.talkService.addTalk(talk).subscribe(x => console.log(x));
     }
